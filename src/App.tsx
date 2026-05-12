@@ -51,7 +51,7 @@ export default function App() {
               className="w-8 h-8 rounded-xl flex items-center justify-center text-sm font-black text-white"
               style={{ background: 'linear-gradient(135deg, #FF6B00, #FF1E64)' }}
             >
-              В
+              ⚡
             </div>
             <span className="font-oswald text-lg font-bold text-gradient">ЗАПРАВКА ВКУСА</span>
           </div>

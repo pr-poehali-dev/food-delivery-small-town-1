@@ -38,7 +38,7 @@ export default function Navbar({ activePage, onNavigate }: NavbarProps) {
               className="w-9 h-9 rounded-xl flex items-center justify-center text-lg font-black"
               style={{ background: 'linear-gradient(135deg, #FF6B00, #FF1E64)' }}
             >
-              В
+              <Icon name="Zap" size={20} className="text-white" />
             </div>
             <span className="font-oswald text-xl font-bold tracking-wide text-gradient">
               ЗАПРАВКА ВКУСА
