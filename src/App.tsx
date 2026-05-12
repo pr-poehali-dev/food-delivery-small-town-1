@@ -53,9 +53,9 @@ export default function App() {
             >
               В
             </div>
-            <span className="font-oswald text-lg font-bold text-gradient">ВКУСНО</span>
+            <span className="font-oswald text-lg font-bold text-gradient">ВКУСНАЯ ЗАПРАВКА</span>
           </div>
-          <p className="text-gray-600 text-sm">© 2026 ВКУСНО. Быстрая доставка еды.</p>
+          <p className="text-gray-600 text-sm">© 2026 ВКУСНАЯ ЗАПРАВКА. Быстрая доставка еды.</p>
           <div className="flex gap-4 text-sm text-gray-600">
             <button onClick={() => navigate('contacts')} className="hover:text-gray-400 transition">Контакты</button>
             <button className="hover:text-gray-400 transition">Политика</button>

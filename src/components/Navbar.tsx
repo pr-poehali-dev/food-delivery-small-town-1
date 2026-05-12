@@ -41,7 +41,7 @@ export default function Navbar({ activePage, onNavigate }: NavbarProps) {
               В
             </div>
             <span className="font-oswald text-xl font-bold tracking-wide text-gradient">
-              ВКУСНО
+              ВКУСНАЯ ЗАПРАВКА
             </span>
           </button>
 
