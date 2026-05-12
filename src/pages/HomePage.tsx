@@ -64,10 +64,14 @@ export default function HomePage({ onNavigate }: HomePageProps) {
               <span className="text-white">У ДВЕРИ</span>
             </h1>
 
-            <p className="text-gray-400 text-lg mb-8 max-w-md animate-fade-in delay-200">
-              Рестораны города в одном приложении. Горячая еда, быстрая доставка,
-              удобное отслеживание курьера в реальном времени.
-            </p>
+            <div className="text-gray-300 text-lg mb-8 max-w-md animate-fade-in delay-200 space-y-3">
+              <p className="font-semibold text-white">Голод атакует? НЛО бургеры уже в пути! 🛸🍔</p>
+              <p className="text-gray-400">
+                Сочная котлета, свежие овощи и фирменная булочка — каждый бургер словно прибыл с другой планеты. А чтобы остудить космический аппетит, возьмите ледяной лимонад: яркий вкус и максимум свежести!
+              </p>
+              <p className="text-gray-400">Доставка за 1 час — быстрее, чем НЛО пролетит над городом! 🚀</p>
+              <p className="font-semibold text-neon-orange">Заказывайте прямо сейчас!</p>
+            </div>
 
             <div className="flex flex-wrap gap-3 mb-10 animate-fade-in delay-300">
               <button
