@@ -19,9 +19,17 @@ const dishes = [
   { id: 12, name: 'Картофель фри', restaurant: 'Burger House', price: 180, rating: 4.6, time: '10 мин', emoji: '🍟', category: 'Закуски', popular: true },
   { id: 13, name: 'Луковые кольца', restaurant: 'Burger House', price: 210, rating: 4.5, time: '10 мин', emoji: '🧅', category: 'Закуски', popular: false },
   { id: 14, name: 'Наггетсы 10 шт', restaurant: 'Burger House', price: 290, rating: 4.7, time: '15 мин', emoji: '🍗', category: 'Закуски', popular: false },
-  { id: 15, name: 'Кола 0.5 л', restaurant: 'Burger House', price: 120, rating: 4.4, time: '5 мин', emoji: '🥤', category: 'Напитки', popular: false },
-  { id: 16, name: 'Лимонад Манго', restaurant: 'Green Bowl', price: 180, rating: 4.8, time: '5 мин', emoji: '🍹', category: 'Напитки', popular: true },
-  { id: 17, name: 'Кофе латте', restaurant: 'Sweet Time', price: 220, rating: 4.7, time: '5 мин', emoji: '☕', category: 'Напитки', popular: false },
+  { id: 15, name: 'Кола 0.5 л', restaurant: 'Burger House', price: 120, rating: 4.4, time: '5 мин', emoji: '🥤', category: 'Напитки', subcategory: '', popular: false },
+  { id: 16, name: 'Лимонад Манго', restaurant: 'Green Bowl', price: 180, rating: 4.8, time: '5 мин', emoji: '🍹', category: 'Напитки', subcategory: 'Лимонады', popular: true },
+  { id: 17, name: 'Кофе латте', restaurant: 'Sweet Time', price: 220, rating: 4.7, time: '5 мин', emoji: '☕', category: 'Напитки', subcategory: '', popular: false },
+  { id: 23, name: 'Милкшейк Клубника', restaurant: 'Заправка Вкуса', price: 250, rating: 4.8, time: '7 мин', emoji: '🥛', category: 'Напитки', subcategory: 'Милкшейки', popular: true },
+  { id: 24, name: 'Милкшейк Шоколад', restaurant: 'Заправка Вкуса', price: 250, rating: 4.7, time: '7 мин', emoji: '🥛', category: 'Напитки', subcategory: 'Милкшейки', popular: false },
+  { id: 25, name: 'Милкшейк Ваниль', restaurant: 'Заправка Вкуса', price: 240, rating: 4.6, time: '7 мин', emoji: '🥛', category: 'Напитки', subcategory: 'Милкшейки', popular: false },
+  { id: 26, name: 'Лимонад Лимон-Мята', restaurant: 'Заправка Вкуса', price: 190, rating: 4.7, time: '5 мин', emoji: '🍋', category: 'Напитки', subcategory: 'Лимонады', popular: false },
+  { id: 27, name: 'Лимонад Арбуз', restaurant: 'Заправка Вкуса', price: 190, rating: 4.8, time: '5 мин', emoji: '🍉', category: 'Напитки', subcategory: 'Лимонады', popular: false },
+  { id: 28, name: 'ДЖУСИ Апельсин', restaurant: 'Заправка Вкуса', price: 210, rating: 4.9, time: '5 мин', emoji: '🍊', category: 'Напитки', subcategory: 'ДЖУСИ лимонады', popular: true },
+  { id: 29, name: 'ДЖУСИ Маракуйя', restaurant: 'Заправка Вкуса', price: 210, rating: 4.8, time: '5 мин', emoji: '🌴', category: 'Напитки', subcategory: 'ДЖУСИ лимонады', popular: false },
+  { id: 30, name: 'ДЖУСИ Клубника-Базилик', restaurant: 'Заправка Вкуса', price: 220, rating: 4.9, time: '5 мин', emoji: '🍓', category: 'Напитки', subcategory: 'ДЖУСИ лимонады', popular: false },
   { id: 18, name: 'Соус острый', restaurant: 'Burger House', price: 60, rating: 4.3, time: '5 мин', emoji: '🫙', category: 'Прочее', popular: false },
   { id: 19, name: 'Влажные салфетки', restaurant: 'Burger House', price: 30, rating: 4.2, time: '5 мин', emoji: '🧻', category: 'Прочее', popular: false },
 ];
@@ -47,15 +55,25 @@ interface CatalogPageProps {
   onNavigate: (page: string) => void;
 }
 
+const DRINK_SUBCATEGORIES = ['Все напитки', 'Милкшейки', 'Лимонады', 'ДЖУСИ лимонады'];
+
 export default function CatalogPage({ onNavigate }: CatalogPageProps) {
   const [activeCategory, setActiveCategory] = useState('Все');
+  const [activeDrinkSub, setActiveDrinkSub] = useState('Все напитки');
   const [search, setSearch] = useState('');
   const [cart, setCart] = useState<CartItem[]>([]);
   const [tab, setTab] = useState<'dishes' | 'restaurants'>('dishes');
   const [sortBy, setSortBy] = useState<'popular' | 'price' | 'rating'>('popular');
 
   const filtered = dishes
-    .filter(d => activeCategory === 'Все' || d.category === activeCategory)
+    .filter(d => {
+      if (activeCategory === 'Все') return true;
+      if (d.category !== activeCategory) return false;
+      if (activeCategory === 'Напитки' && activeDrinkSub !== 'Все напитки') {
+        return (d as typeof d & { subcategory?: string }).subcategory === activeDrinkSub;
+      }
+      return true;
+    })
     .filter(d => d.name.toLowerCase().includes(search.toLowerCase()) || d.restaurant.toLowerCase().includes(search.toLowerCase()))
     .sort((a, b) => {
       if (sortBy === 'price') return a.price - b.price;
@@ -128,11 +146,11 @@ export default function CatalogPage({ onNavigate }: CatalogPageProps) {
           </div>
 
           {/* Category Filter */}
-          <div className="flex gap-2 overflow-x-auto pb-2 mb-6 animate-fade-in delay-300" style={{ scrollbarWidth: 'none' }}>
+          <div className="flex gap-2 overflow-x-auto pb-2 mb-3 animate-fade-in delay-300" style={{ scrollbarWidth: 'none' }}>
             {categories.map(cat => (
               <button
                 key={cat}
-                onClick={() => setActiveCategory(cat)}
+                onClick={() => { setActiveCategory(cat); setActiveDrinkSub('Все напитки'); }}
                 className="px-4 py-2 rounded-xl text-sm font-medium whitespace-nowrap transition-all duration-200"
                 style={activeCategory === cat
                   ? { background: 'linear-gradient(135deg, #FF6B00, #FF1E64)', color: 'white' }
@@ -143,6 +161,29 @@ export default function CatalogPage({ onNavigate }: CatalogPageProps) {
               </button>
             ))}
           </div>
+
+          {/* Drink Subcategories */}
+          {activeCategory === 'Напитки' && (
+            <div className="flex gap-2 overflow-x-auto pb-2 mb-6 animate-fade-in" style={{ scrollbarWidth: 'none' }}>
+              {DRINK_SUBCATEGORIES.map(sub => (
+                <button
+                  key={sub}
+                  onClick={() => setActiveDrinkSub(sub)}
+                  className="px-4 py-2 rounded-xl text-sm font-medium whitespace-nowrap transition-all duration-200 flex items-center gap-1.5"
+                  style={activeDrinkSub === sub
+                    ? { background: 'rgba(255,220,0,0.2)', color: '#FFDC00', border: '1px solid rgba(255,220,0,0.4)' }
+                    : { background: 'rgba(22,22,30,0.6)', color: '#A0A0B4', border: '1px solid rgba(255,255,255,0.04)' }
+                  }
+                >
+                  {sub === 'Милкшейки' && '🥛'}
+                  {sub === 'Лимонады' && '🍋'}
+                  {sub === 'ДЖУСИ лимонады' && '🍊'}
+                  {sub}
+                </button>
+              ))}
+            </div>
+          )}
+          {activeCategory !== 'Напитки' && <div className="mb-6" />}
 
           {/* Dishes Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
