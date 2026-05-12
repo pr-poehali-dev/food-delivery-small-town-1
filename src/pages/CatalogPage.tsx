@@ -11,9 +11,19 @@ const dishes = [
   { id: 7, name: 'Дабл Смэш Бургер', restaurant: 'Burger House', price: 590, rating: 4.7, time: '22 мин', emoji: '🍔', category: 'Бургеры', popular: false },
   { id: 8, name: 'Пепперони', restaurant: 'Pizza Roma', price: 720, rating: 4.8, time: '28 мин', emoji: '🍕', category: 'Пицца', popular: false },
   { id: 9, name: 'Филадельфия 8 шт', restaurant: 'Sushi World', price: 540, rating: 4.8, time: '30 мин', emoji: '🍣', category: 'Суши', popular: true },
+  { id: 10, name: 'НЛО-бургер с сыром', restaurant: 'Burger House', price: 650, rating: 4.9, time: '22 мин', emoji: '🛸', category: 'НЛО-бургеры', popular: true },
+  { id: 11, name: 'НЛО-бургер Огненный', restaurant: 'Burger House', price: 720, rating: 4.8, time: '25 мин', emoji: '🛸', category: 'НЛО-бургеры', popular: false },
+  { id: 12, name: 'Картофель фри', restaurant: 'Burger House', price: 180, rating: 4.6, time: '10 мин', emoji: '🍟', category: 'Закуски', popular: true },
+  { id: 13, name: 'Луковые кольца', restaurant: 'Burger House', price: 210, rating: 4.5, time: '10 мин', emoji: '🧅', category: 'Закуски', popular: false },
+  { id: 14, name: 'Наггетсы 10 шт', restaurant: 'Burger House', price: 290, rating: 4.7, time: '15 мин', emoji: '🍗', category: 'Закуски', popular: false },
+  { id: 15, name: 'Кола 0.5 л', restaurant: 'Burger House', price: 120, rating: 4.4, time: '5 мин', emoji: '🥤', category: 'Напитки', popular: false },
+  { id: 16, name: 'Лимонад Манго', restaurant: 'Green Bowl', price: 180, rating: 4.8, time: '5 мин', emoji: '🍹', category: 'Напитки', popular: true },
+  { id: 17, name: 'Кофе латте', restaurant: 'Sweet Time', price: 220, rating: 4.7, time: '5 мин', emoji: '☕', category: 'Напитки', popular: false },
+  { id: 18, name: 'Соус острый', restaurant: 'Burger House', price: 60, rating: 4.3, time: '5 мин', emoji: '🫙', category: 'Прочее', popular: false },
+  { id: 19, name: 'Влажные салфетки', restaurant: 'Burger House', price: 30, rating: 4.2, time: '5 мин', emoji: '🧻', category: 'Прочее', popular: false },
 ];
 
-const categories = ['Все', 'Бургеры', 'Пицца', 'Суши', 'Лапша', 'Салаты', 'Десерты'];
+const categories = ['Все', 'Бургеры', 'НЛО-бургеры', 'Пицца', 'Суши', 'Лапша', 'Салаты', 'Десерты', 'Закуски', 'Напитки', 'Прочее'];
 
 const restaurants = [
   { name: 'Burger House', emoji: '🍔', rating: 4.8, time: '20-30 мин', minOrder: 400 },
