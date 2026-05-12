@@ -41,17 +41,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
         <div className="grid lg:grid-cols-2 gap-12 items-center relative z-10">
           {/* Text */}
           <div>
-            <div
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-6 animate-fade-in"
-              style={{
-                background: 'rgba(255, 107, 0, 0.15)',
-                border: '1px solid rgba(255, 107, 0, 0.3)',
-                color: '#FF6B00',
-              }}
-            >
-              <span className="w-2 h-2 rounded-full bg-neon-orange animate-pulse" />
-              Доставка за 30 минут
-            </div>
+
 
             <h1
               className="font-oswald text-5xl md:text-7xl font-bold leading-none mb-6 animate-fade-in delay-100"
