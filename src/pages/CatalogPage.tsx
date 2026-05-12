@@ -34,9 +34,9 @@ const dishes = [
   { id: 35, name: 'Голубая лагуна', restaurant: 'Заправка Вкуса', price: 250, rating: 4.8, time: '5 мин', emoji: '🫐', category: 'Напитки', subcategory: 'Лимонады', popular: false },
   { id: 36, name: 'Малиновый киви', restaurant: 'Заправка Вкуса', price: 250, rating: 4.7, time: '5 мин', emoji: '🥝', category: 'Напитки', subcategory: 'Лимонады', popular: false },
   { id: 37, name: 'Земляничный ананас', restaurant: 'Заправка Вкуса', price: 250, rating: 4.8, time: '5 мин', emoji: '🍍', category: 'Напитки', subcategory: 'Лимонады', popular: false },
-  { id: 28, name: 'ДЖУСИ Апельсин', restaurant: 'Заправка Вкуса', price: 210, rating: 4.9, time: '5 мин', emoji: '🍊', category: 'Напитки', subcategory: 'ДЖУСИ лимонады', popular: true },
-  { id: 29, name: 'ДЖУСИ Маракуйя', restaurant: 'Заправка Вкуса', price: 210, rating: 4.8, time: '5 мин', emoji: '🌴', category: 'Напитки', subcategory: 'ДЖУСИ лимонады', popular: false },
-  { id: 30, name: 'ДЖУСИ Клубника-Базилик', restaurant: 'Заправка Вкуса', price: 220, rating: 4.9, time: '5 мин', emoji: '🍓', category: 'Напитки', subcategory: 'ДЖУСИ лимонады', popular: false },
+  { id: 28, name: 'Манго-маракуйя', restaurant: 'Заправка Вкуса', price: 250, rating: 4.9, time: '5 мин', emoji: '🥭', category: 'Напитки', subcategory: 'ДЖУСИ лимонады', popular: true },
+  { id: 29, name: 'Малина-яблоко', restaurant: 'Заправка Вкуса', price: 250, rating: 4.8, time: '5 мин', emoji: '🍎', category: 'Напитки', subcategory: 'ДЖУСИ лимонады', popular: false },
+  { id: 30, name: 'Виноград-йогурт', restaurant: 'Заправка Вкуса', price: 250, rating: 4.8, time: '5 мин', emoji: '🍇', category: 'Напитки', subcategory: 'ДЖУСИ лимонады', popular: false },
   { id: 18, name: 'Соус острый', restaurant: 'Burger House', price: 60, rating: 4.3, time: '5 мин', emoji: '🫙', category: 'Прочее', popular: false },
   { id: 19, name: 'Влажные салфетки', restaurant: 'Burger House', price: 30, rating: 4.2, time: '5 мин', emoji: '🧻', category: 'Прочее', popular: false },
 ];
