@@ -2,15 +2,6 @@ import { useState } from 'react';
 import Icon from '@/components/ui/icon';
 
 const dishes = [
-  { id: 1, name: 'Классический Бургер', restaurant: 'Burger House', price: 450, rating: 4.8, time: '20 мин', emoji: '🍔', category: 'Бургеры', popular: true },
-  { id: 2, name: 'Маргарита XL', restaurant: 'Pizza Roma', price: 680, rating: 4.9, time: '25 мин', emoji: '🍕', category: 'Пицца', popular: true },
-  { id: 3, name: 'Сет Токио 32 шт', restaurant: 'Sushi World', price: 1290, rating: 4.7, time: '35 мин', emoji: '🍣', category: 'Суши', popular: false },
-  { id: 4, name: 'Рамен с курицей', restaurant: 'Tokyo Ramen', price: 490, rating: 4.6, time: '20 мин', emoji: '🍜', category: 'Лапша', popular: false },
-  { id: 5, name: 'Цезарь Классик', restaurant: 'Green Bowl', price: 380, rating: 4.5, time: '15 мин', emoji: '🥗', category: 'Салаты', popular: false },
-  { id: 6, name: 'Чизкейк Нью-Йорк', restaurant: 'Sweet Time', price: 320, rating: 4.9, time: '10 мин', emoji: '🍰', category: 'Десерты', popular: true },
-  { id: 7, name: 'Дабл Смэш Бургер', restaurant: 'Burger House', price: 590, rating: 4.7, time: '22 мин', emoji: '🍔', category: 'Бургеры', popular: false },
-  { id: 8, name: 'Пепперони', restaurant: 'Pizza Roma', price: 720, rating: 4.8, time: '28 мин', emoji: '🍕', category: 'Пицца', popular: false },
-  { id: 9, name: 'Филадельфия 8 шт', restaurant: 'Sushi World', price: 540, rating: 4.8, time: '30 мин', emoji: '🍣', category: 'Суши', popular: true },
   { id: 10, name: 'НЛО-бургер с говядиной', restaurant: 'Заправка Вкуса', price: 380, rating: 4.9, time: '22 мин', emoji: '🛸', category: 'НЛО-бургеры', popular: true },
   { id: 11, name: 'НЛО-бургер с курицей', restaurant: 'Заправка Вкуса', price: 330, rating: 4.8, time: '20 мин', emoji: '🛸', category: 'НЛО-бургеры', popular: false },
   { id: 20, name: 'НЛО-бургер с охотничьими колбасками', restaurant: 'Заправка Вкуса', price: 330, rating: 4.7, time: '20 мин', emoji: '🛸', category: 'НЛО-бургеры', popular: false },
@@ -41,13 +32,10 @@ const dishes = [
   { id: 19, name: 'Влажные салфетки', restaurant: 'Burger House', price: 30, rating: 4.2, time: '5 мин', emoji: '🧻', category: 'Прочее', popular: false },
 ];
 
-const categories = ['Все', 'Бургеры', 'НЛО-бургеры', 'Пицца', 'Суши', 'Лапша', 'Салаты', 'Десерты', 'Закуски', 'Напитки', 'Прочее'];
+const categories = ['Все', 'НЛО-бургеры', 'Закуски', 'Напитки', 'Прочее'];
 
 const restaurants = [
-  { name: 'Burger House', emoji: '🍔', rating: 4.8, time: '20-30 мин', minOrder: 400 },
-  { name: 'Pizza Roma', emoji: '🍕', rating: 4.9, time: '25-35 мин', minOrder: 500 },
-  { name: 'Sushi World', emoji: '🍣', rating: 4.7, time: '30-45 мин', minOrder: 800 },
-  { name: 'Tokyo Ramen', emoji: '🍜', rating: 4.6, time: '20-30 мин', minOrder: 350 },
+  { name: 'Заправка Вкуса', emoji: '⚡', rating: 4.9, time: '20-30 мин', minOrder: 300 },
 ];
 
 interface CartItem {
