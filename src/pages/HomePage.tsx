@@ -57,11 +57,11 @@ export default function HomePage({ onNavigate }: HomePageProps) {
               className="font-oswald text-5xl md:text-7xl font-bold leading-none mb-6 animate-fade-in delay-100"
               style={{ lineHeight: 1.05 }}
             >
-              <span className="text-white">ЛУЧШАЯ</span>
+              <span className="text-white">БУРГЕРЫ</span>
               <br />
-              <span className="text-gradient">ЕДА</span>
+              <span className="text-gradient">С ДРУГОЙ</span>
               <br />
-              <span className="text-white">У ДВЕРИ</span>
+              <span className="text-white">ПЛАНЕТЫ</span>
             </h1>
 
             <div className="text-gray-300 text-lg mb-8 max-w-md animate-fade-in delay-200 space-y-3">
